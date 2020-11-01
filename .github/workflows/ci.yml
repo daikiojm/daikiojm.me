@@ -49,3 +49,12 @@ jobs:
 
       - name: Run tests 🧪
         run: yarn test
+
+      - name: Run generate 🐟
+        run: yarn generate
+
+      - name: Run deploy 👨‍👨‍👦‍👦
+        run: npx netlify-cli deploy --dir=./dist
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
