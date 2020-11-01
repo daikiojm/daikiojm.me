@@ -1,93 +1,71 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12" sm="8" md="6">
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
+      <v-card elevation="1">
         <v-card-text>
-          <p>
-            Vuetify is a progressive Material Design component framework for
-            Vue.js. It was designed to empower developers to create amazing
-            applications.
-          </p>
-          <p>
-            For more information on Vuetify, check out the
-            <a
-              href="https://vuetifyjs.com"
+          <v-row justify="start">
+            <v-col cols="auto">
+              <v-avatar>
+                <img src="https://github.com/daikiojm.png" alt="daikiojm" />
+              </v-avatar>
+            </v-col>
+            <v-col>
+              <h2
+                class="subtitle-1 pa-0 ma-0 font-weight-regular text-truncate"
+              >
+                Daiki Oijma / @daikiojm
+              </h2>
+              <p class="pa-0 ma-0 font-weight-light text-truncate">
+                Web Application Developer
+              </p>
+            </v-col>
+          </v-row>
+          <v-divider class="mt-2 mb-2"></v-divider>
+          <div class="d-flex">
+            <v-btn
+              class="pa-1 me-2"
+              outlined
+              x-small
+              fab
+              color="blue-grey lighten-3"
+              href="https://twitter.com/daikiojm"
               target="_blank"
-              rel="noopener noreferrer"
             >
-              documentation </a
-            >.
-          </p>
-          <p>
-            If you have questions, please join the official
-            <a
-              href="https://chat.vuetifyjs.com/"
+              <v-icon>mdi-twitter</v-icon>
+            </v-btn>
+            <v-btn
+              class="pa-1 me-2"
+              outlined
+              x-small
+              fab
+              color="blue-grey lighten-3"
+              href="https://github.com/daikiojm"
               target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
             >
-              discord </a
-            >.
-          </p>
-          <p>
-            Find a bug? Report it on the github
-            <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
+              <v-icon>mdi-github</v-icon>
+            </v-btn>
+            <v-btn
+              class="pa-1 me-2"
+              outlined
+              x-small
+              fab
+              color="blue-grey lighten-3"
+              href="https://www.facebook.com/daiki.ojima.94"
               target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
             >
-              issue board </a
-            >.
-          </p>
-          <p>
-            Thank you for developing with Vuetify and I look forward to bringing
-            more exciting features in the future.
-          </p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
+              <v-icon>mdi-facebook</v-icon>
+            </v-btn>
           </div>
-          <hr class="my-3" />
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br />
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
         </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn color="primary" nuxt to="/inspire"> Continue </v-btn>
-        </v-card-actions>
       </v-card>
     </v-col>
   </v-row>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue';
-import VuetifyLogo from '~/components/VuetifyLogo.vue';
+import Vue from 'vue';
 
-export default {
-  components: {
-    Logo,
-    VuetifyLogo,
-  },
-};
+export default Vue.extend({
+  components: {},
+});
 </script>
