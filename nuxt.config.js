@@ -1,6 +1,8 @@
 import colors from 'vuetify/es5/util/colors';
 
 export default {
+  target: 'static',
+
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     titleTemplate: '%s - daikiojm.me',
@@ -43,6 +45,8 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    // https://github.com/nuxt-community/proxy-module
+    '@nuxtjs/proxy',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
