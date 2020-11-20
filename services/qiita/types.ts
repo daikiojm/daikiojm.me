@@ -56,4 +56,5 @@ export type QiitaEntry = {
   type: 'qiita';
   date: string;
   data: QiitaItem;
+  link: string;
 };

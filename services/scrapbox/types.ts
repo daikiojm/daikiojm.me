@@ -30,4 +30,5 @@ export type ScrapboxEntry = {
   type: 'scrapbox';
   date: string;
   data: ScrapboxPage;
+  link: string;
 };

@@ -22,6 +22,7 @@ export const getQiitaEntries = async () => {
       type: 'qiita' as const,
       date: dayjs(item.created_at).toISOString(),
       data: item,
+      link: item.url,
     } as QiitaEntry;
   });
 };

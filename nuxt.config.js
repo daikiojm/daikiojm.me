@@ -77,4 +77,9 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
+
+  // env config
+  privateRuntimeConfig: {
+    hatenaBlogApiKey: process.env.HATENA_API_KEY,
+  },
 };
