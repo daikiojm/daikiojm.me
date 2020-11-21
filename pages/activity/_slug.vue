@@ -39,19 +39,18 @@
   </v-row>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue';
-import { getActivities } from '../services/activity';
 
 export default Vue.extend({
   components: {},
-  async asyncData({ $config }) {
-    const activities = await getActivities($config);
-
-    // TODO: https://ja.nuxtjs.org/docs/2.x/configuration-glossary/configuration-generate/ を使ってページングを実装できそう
-    // 件数ではなくてtimestampで年次でページを分けてもいいかもれない
-
-    return { items: activities };
+  asyncData({ payload }) {
+    if (payload) {
+      return { items: payload };
+    } else {
+      console.log('not get');
+      return { items: [] };
+    }
   },
 });
 </script>

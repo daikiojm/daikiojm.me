@@ -10,5 +10,7 @@ dayjs.locale('ja');
 
 export { dayjs, Dayjs };
 
-export const sleep = async (ms: number) =>
-  await new Promise((resolve) => setTimeout(resolve, ms));
+export const dateCompare = (a: string, b: string) =>
+  dayjs(a).isAfter(dayjs(b)) ? -1 : 1;
+
+export const formatDate = (date: string) => dayjs(date).format('YYYY/MM/DD');

@@ -1,4 +1,5 @@
-import { dayjs, createAxiosClient } from '../common';
+import { createAxiosClient } from '../common';
+import { dayjs } from '../../utils';
 import { QiitaItem, QiitaEntry } from './types';
 
 const QIITA_API_BASE_URL = 'https://qiita.com/api/v2';

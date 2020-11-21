@@ -4,7 +4,7 @@
       <v-container fill-height fluid>
         <nuxt />
       </v-container>
-      <v-footer>
+      <v-footer absolute>
         <v-col cols="12" sm="8" md="6">
           <p class="caption blue-grey--text text-justify mb-0">
             <span>Contact:</span> daiki.ojima@gmail.com / DM on Twitter

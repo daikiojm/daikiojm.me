@@ -1,4 +1,5 @@
-import { dayjs, createAxiosClient } from '../common';
+import { createAxiosClient } from '../common';
+import { dayjs } from '../../utils';
 import { ScrapboxPages, ScrapboxEntry } from './types';
 
 const SCRAPBOX_API_BASE_URL = 'https://scrapbox.io';

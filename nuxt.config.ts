@@ -1,6 +1,8 @@
+import { NuxtConfig } from '@nuxt/types';
 import colors from 'vuetify/es5/util/colors';
+import { dynamicRoutes } from './dynamic-routes';
 
-export default {
+const nuxtConfig: NuxtConfig = {
   target: 'static',
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -17,44 +19,14 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-
-  // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [],
-
-  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
-
-  // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
-
-  // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
-    // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
-    // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    '@nuxtjs/composition-api',
   ],
-
-  // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: [
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
-    // https://go.nuxtjs.dev/content
-    '@nuxt/content',
-    // https://github.com/nuxt-community/proxy-module
-    '@nuxtjs/proxy',
-  ],
-
-  // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
-
-  // Content module configuration (https://go.nuxtjs.dev/config-content)
-  content: {},
-
+  modules: ['@nuxtjs/pwa', '@nuxt/content', '@nuxtjs/proxy'],
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
@@ -74,12 +46,13 @@ export default {
       },
     },
   },
-
-  // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
-
-  // env config
-  privateRuntimeConfig: {
-    hatenaBlogApiKey: process.env.HATENA_API_KEY,
+  // dynamic page genarate configuration
+  // @see https://ja.nuxtjs.org/docs/2.x/configuration-glossary/configuration-generate/#routes
+  generate: {
+    interval: 10,
+    fallback: true,
+    routes: dynamicRoutes,
   },
 };
+
+module.exports = nuxtConfig;

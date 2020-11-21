@@ -58,6 +58,7 @@
           </div>
         </v-card-text>
       </v-card>
+      <nuxt-link to="/activity/1">Activity</nuxt-link>
     </v-col>
   </v-row>
 </template>
