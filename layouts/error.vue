@@ -13,6 +13,9 @@
 <script lang="ts">
 import Vue from 'vue';
 
+const pageNotFound = '404 Not Found';
+const otherError = 'An error occurred';
+
 export default Vue.extend({
   layout: 'empty',
   props: {
@@ -21,10 +24,10 @@ export default Vue.extend({
       default: null,
     },
   },
+  data() {
+    return { pageNotFound, otherError };
+  },
   head() {
-    const pageNotFound = '404 Not Found';
-    const otherError = 'An error occurred';
-
     const title = this.error.statusCode === 404 ? pageNotFound : otherError;
 
     return {
@@ -33,9 +36,3 @@ export default Vue.extend({
   },
 });
 </script>
-
-<style scoped>
-h1 {
-  font-size: 20px;
-}
-</style>

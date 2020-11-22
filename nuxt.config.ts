@@ -1,11 +1,8 @@
 import { NuxtConfig } from '@nuxt/types';
 import colors from 'vuetify/es5/util/colors';
-import { dynamicRoutes } from './dynamic-routes';
 
 const nuxtConfig: NuxtConfig = {
   target: 'static',
-
-  // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     titleTemplate: '%s - daikiojm.me',
     title: 'daikiojm.me',
@@ -24,10 +21,8 @@ const nuxtConfig: NuxtConfig = {
     '@nuxt/typescript-build',
     '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify',
-    '@nuxtjs/composition-api',
   ],
-  modules: ['@nuxtjs/pwa', '@nuxt/content', '@nuxtjs/proxy'],
-  // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
+  modules: ['@nuxtjs/pwa', '@nuxtjs/proxy'],
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     treeShake: true,
@@ -46,12 +41,9 @@ const nuxtConfig: NuxtConfig = {
       },
     },
   },
-  // dynamic page genarate configuration
-  // @see https://ja.nuxtjs.org/docs/2.x/configuration-glossary/configuration-generate/#routes
-  generate: {
-    interval: 10,
-    fallback: true,
-    routes: dynamicRoutes,
+  plugins: ['~/plugins/activities.ts'],
+  privateRuntimeConfig: {
+    hatenaBlogApiKey: process.env.HATENA_API_KEY,
   },
 };
 

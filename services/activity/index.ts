@@ -1,15 +1,20 @@
 import { getQiitaEntries } from '../qiita';
 import { getScrapboxEntries } from '../scrapbox';
 import { getHatenaBlogEntries } from '../blog';
-import { dateCompare, formatDate } from '../../utils';
 import { Activity } from './types';
+import { dateCompare, formatDate } from '~/utils';
 
-// TODO: pagination
-export const getActivities = async () => {
+export type ActivitiesConfig = {
+  hatenaBlogApiKey: string;
+};
+
+export const getActivities = async (config: ActivitiesConfig) => {
+  const { hatenaBlogApiKey } = config;
+
   const allEntries = await Promise.all([
     getQiitaEntries(),
     getScrapboxEntries(),
-    getHatenaBlogEntries(),
+    getHatenaBlogEntries(hatenaBlogApiKey),
   ]);
 
   return allEntries

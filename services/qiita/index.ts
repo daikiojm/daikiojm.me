@@ -1,6 +1,6 @@
 import { createAxiosClient } from '../common';
-import { dayjs } from '../../utils';
 import { QiitaItem, QiitaEntry } from './types';
+import { dayjs } from '~/utils';
 
 const QIITA_API_BASE_URL = 'https://qiita.com/api/v2';
 const QIITA_USER_NAME = 'daikiojm';
