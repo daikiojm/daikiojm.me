@@ -7,7 +7,7 @@
     "build": "nuxt-ts build",
     "prestart": "yarn run generate",
     "start": "nuxt-ts start",
-    "generate": "nuxt-ts generate",
+    "generate": "nuxt-ts generate --fail-on-error",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
     "lint": "yarn lint:js && yarn lint:style",
