@@ -21,7 +21,6 @@ jobs:
       - name: Get yarn cache directory path 🛠
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
-
       - name: Cache node_modules 📦
         uses: actions/cache@v2
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
@@ -31,13 +30,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-        - name: Install dependencies 👨🏻‍💻
-          run: yarn --frozen-lockfile --non-interactive
+      - name: Install dependencies 👨🏻‍💻
+        run: yarn --frozen-lockfile --non-interactive
 
-        - name: Run linter 👀
-          run: yarn lint
+      - name: Run linter 👀
+        run: yarn lint
 
-  lint:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -64,11 +63,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-        - name: Install dependencies 👨🏻‍💻
-          run: yarn --frozen-lockfile --non-interactive
+      - name: Install dependencies 👨🏻‍💻
+        run: yarn --frozen-lockfile --non-interactive
 
-        - name: Run tests 🧪
-          run: yarn test
+      - name: Run tests 🧪
+        run: yarn test
 
   deploy:
     needs: [lint, test]
@@ -99,16 +98,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-        - name: Install dependencies 👨🏻‍💻
-          run: yarn --frozen-lockfile --non-interactive
+      - name: Install dependencies 👨🏻‍💻
+        run: yarn --frozen-lockfile --non-interactive
 
-        - name: Run generate 🐟
-          run: yarn generate
-          env:
-            HATENA_API_KEY: ${{ secrets.HATENA_API_KEY }}
+      - name: Run generate 🐟
+        run: yarn generate
+        env:
+          HATENA_API_KEY: ${{ secrets.HATENA_API_KEY }}
 
-        - name: Run deploy 👨‍👨‍👦‍👦
-          run: npx netlify-cli deploy --prod --dir=./dist
-          env:
-            NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-            NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      - name: Run deploy 👨‍👨‍👦‍👦
+        run: npx netlify-cli deploy --prod --dir=./dist
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
