@@ -26,7 +26,14 @@ const nuxtConfig: NuxtConfig = {
   purgeCSS: {
     enabled: true,
     paths: ['node_modules/vuetify/src/**/*.ts'],
-    whitelist: ['v-application', 'v-application--wrap', 'layout', 'row', 'col'],
+    whitelist: [
+      'v-application',
+      'v-application--wrap',
+      'layout',
+      'row',
+      'col',
+      'rounded',
+    ],
     whitelistPatterns: [
       /^v-((?!application).)*$/,
       /^theme--*/,
@@ -41,6 +48,7 @@ const nuxtConfig: NuxtConfig = {
       /^row-*/,
       /^col-*/,
       /^d-*/,
+      /^rounded-*/,
     ],
     whitelistPatternsChildren: [/^v-((?!application).)*$/, /^theme--*/],
   },
