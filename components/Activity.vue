@@ -12,9 +12,23 @@
           open-delay="20"
           close-delay="20"
         >
-          <div class="my-3 py-4" :class="{ 'grey lighten-5': hover }">
+          <div
+            class="my-3 py-4"
+            :class="{ 'grey lighten-5 rounded-lg': hover }"
+          >
             <div class="d-flex justify-space-between">
-              <p class="text-caption grey--text mb-0">{{ item.date }}</p>
+              <div class="mb-0 d-flex flex-row">
+                <p class="text-caption grey--text mb-0">{{ item.date }}</p>
+                <div class="d-flex flex-column justify-center ml-2">
+                  <v-chip
+                    :color="categoryChipColor(item.category)"
+                    text-color="white"
+                    x-small
+                  >
+                    {{ item.category }}
+                  </v-chip>
+                </div>
+              </div>
               <v-tooltip top>
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn
@@ -51,6 +65,22 @@ export default Vue.extend({
     activities: {
       type: Array as PropType<Activity[]>,
       default: () => [],
+    },
+  },
+
+  methods: {
+    categoryChipColor(c: Activity['category']) {
+      switch (c) {
+        case 'scrapbox': {
+          return 'teal';
+        }
+        case 'qiita': {
+          return 'green';
+        }
+        default: {
+          return 'primary';
+        }
+      }
     },
   },
 });
