@@ -27,7 +27,7 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/proxy": "^2.0.1",
-    "@nuxtjs/pwa": "^3.0.2",
+    "@nuxtjs/pwa": "^3.3.5",
     "axios": "^0.21.0",
     "core-js": "^3.7.0",
     "dayjs": "^1.10.4",
