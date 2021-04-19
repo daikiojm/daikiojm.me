@@ -29,7 +29,7 @@
     "@nuxtjs/proxy": "^2.0.1",
     "@nuxtjs/pwa": "^3.3.5",
     "axios": "^0.21.0",
-    "core-js": "^3.7.0",
+    "core-js": "^3.10.1",
     "dayjs": "^1.10.4",
     "nuxt": "^2.14.6",
     "xml2js": "^0.4.23"
@@ -60,7 +60,7 @@
     "lint-staged": "^10.5.4",
     "nuxt-purgecss": "^1.0.0",
     "prettier": "^2.2.1",
-    "sass": "^1.29.0",
+    "sass": "^1.32.10",
     "sass-loader": "11.0.1",
     "stylelint": "^13.8.0",
     "stylelint-config-prettier": "^8.0.2",
