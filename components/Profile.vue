@@ -4,7 +4,11 @@
       <v-col cols="10" sm="10" md="10" lg="8">
         <div class="d-flex">
           <v-avatar class="mx-auto">
-            <img :src="profileImg" alt="daikiojm" />
+            <img
+              :src="profileImg"
+              alt="daikiojm"
+              style="width: 48px; height: 48px"
+            />
           </v-avatar>
         </div>
         <h2

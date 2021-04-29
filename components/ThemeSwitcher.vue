@@ -47,6 +47,7 @@ export default defineComponent({
 $position: 24px;
 
 .theme-switcher {
+  z-index: 999;
   position: absolute;
   top: $position;
   right: $position;
