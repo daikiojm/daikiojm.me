@@ -1,8 +1,9 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12" sm="8" md="6">
-      <Profile></Profile>
-      <Activity class="mt-6" :activities="items"></Activity>
+      <ThemeSwitcher />
+      <Profile />
+      <Activity class="mt-6" :activities="items" />
     </v-col>
   </v-row>
 </template>
@@ -12,9 +13,11 @@ import { defineComponent } from '@nuxtjs/composition-api';
 
 import Profile from '~/components/Profile.vue';
 import Activity from '~/components/Activity.vue';
+import ThemeSwitcher from '~/components/ThemeSwitcher.vue';
 
 export default defineComponent({
   components: {
+    ThemeSwitcher,
     Profile,
     Activity,
   },
