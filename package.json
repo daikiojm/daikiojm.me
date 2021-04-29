@@ -19,12 +19,6 @@
     "*.{js,vue}": "eslint",
     "*.{css,vue}": "stylelint"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
-    }
-  },
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/composition-api": "^0.23.3",
