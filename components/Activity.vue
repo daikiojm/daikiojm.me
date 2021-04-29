@@ -13,9 +13,12 @@
           close-delay="20"
         >
           <div
-            class="my-3 py-4"
+            class="my-3 pa-4"
             :style="{ cursor: hover ? 'pointer' : 'default' }"
-            :class="{ 'grey lighten-5 rounded-lg': hover }"
+            :class="{
+              'grey lighten-5 rounded-lg': hover && !$vuetify.theme.dark,
+              'grey darken-3 rounded-lg': hover && $vuetify.theme.dark,
+            }"
             @click="handleCardClick(item)"
           >
             <div class="d-flex justify-space-between">
