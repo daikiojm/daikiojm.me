@@ -4,7 +4,7 @@
       <v-col cols="10" sm="10" md="10" lg="8">
         <div class="d-flex">
           <v-avatar class="mx-auto">
-            <img src="https://github.com/daikiojm.png" alt="daikiojm" />
+            <img :src="profileImg" alt="daikiojm" />
           </v-avatar>
         </div>
         <h2
@@ -23,7 +23,7 @@
             x-small
             fab
             color="blue-grey lighten-3"
-            href="https://twitter.com/daikiojm"
+            :href="twitterProfileUrl"
             target="_blank"
           >
             <v-icon>mdi-twitter</v-icon>
@@ -34,7 +34,7 @@
             x-small
             fab
             color="blue-grey lighten-3"
-            href="https://github.com/daikiojm"
+            :href="githubProfileUrl"
             target="_blank"
           >
             <v-icon>mdi-github</v-icon>
@@ -45,7 +45,7 @@
             x-small
             fab
             color="blue-grey lighten-3"
-            href="https://www.facebook.com/daiki.ojima.94"
+            :href="facebookProfileUrl"
             target="_blank"
           >
             <v-icon>mdi-facebook</v-icon>
@@ -61,5 +61,13 @@ import { defineComponent } from '@nuxtjs/composition-api';
 
 export default defineComponent({
   name: 'Profile',
+  setup() {
+    return {
+      profileImg: 'https://github.com/daikiojm.png',
+      twitterProfileUrl: 'https://twitter.com/daikiojm',
+      githubProfileUrl: 'https://github.com/daikiojm',
+      facebookProfileUrl: 'https://www.facebook.com/daiki.ojima.94',
+    };
+  },
 });
 </script>

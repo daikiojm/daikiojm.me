@@ -14,7 +14,9 @@
         >
           <div
             class="my-3 py-4"
+            :style="{ cursor: hover ? 'pointer' : 'default' }"
             :class="{ 'grey lighten-5 rounded-lg': hover }"
+            @click="handleCardClick(item)"
           >
             <div class="d-flex justify-space-between">
               <div class="mb-0 d-flex flex-row">
@@ -68,8 +70,8 @@ export default defineComponent({
       default: () => [],
     },
   },
-  methods: {
-    categoryChipColor(c: Activity['category']) {
+  setup() {
+    const categoryChipColor = (c: Activity['category']) => {
       switch (c) {
         case 'scrapbox': {
           return 'teal';
@@ -81,7 +83,16 @@ export default defineComponent({
           return 'primary';
         }
       }
-    },
+    };
+
+    const handleCardClick = (item: Activity) => {
+      window.open(item.link!, '_blank');
+    };
+
+    return {
+      categoryChipColor,
+      handleCardClick,
+    };
   },
 });
 </script>
