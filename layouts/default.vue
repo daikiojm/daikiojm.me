@@ -10,17 +10,17 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent, useMeta } from '@nuxtjs/composition-api';
+
 import Footer from '~/components/Footer.vue';
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     Footer,
   },
-  head() {
-    return {
-      title: 'Daiki Oijma / @daikiojm',
-    };
+  head: {},
+  setup() {
+    useMeta({ title: 'Daiki Oijma / @daikiojm' });
   },
 });
 </script>

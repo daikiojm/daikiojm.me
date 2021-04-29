@@ -7,12 +7,13 @@
   </v-row>
 </template>
 
-<script>
-import Vue from 'vue';
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api';
+
 import Profile from '~/components/Profile.vue';
 import Activity from '~/components/Activity.vue';
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     Profile,
     Activity,

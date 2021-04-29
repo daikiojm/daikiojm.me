@@ -56,10 +56,11 @@
 </template>
 
 <script lang="ts">
-import Vue, { PropType } from 'vue';
+import { defineComponent, PropType } from '@nuxtjs/composition-api';
+
 import { Activity } from '~/services/activity/types';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'Activity',
   props: {
     activities: {
@@ -67,7 +68,6 @@ export default Vue.extend({
       default: () => [],
     },
   },
-
   methods: {
     categoryChipColor(c: Activity['category']) {
       switch (c) {

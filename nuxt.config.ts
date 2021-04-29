@@ -21,8 +21,12 @@ const nuxtConfig: NuxtConfig = {
     '@nuxt/typescript-build',
     '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify',
+    '@nuxtjs/composition-api/module',
     'nuxt-purgecss',
   ],
+  generate: {
+    interval: 2000,
+  },
   purgeCSS: {
     enabled: true,
     paths: ['node_modules/vuetify/src/**/*.ts'],

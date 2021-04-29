@@ -12,7 +12,8 @@
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
     "lint": "yarn lint:js && yarn lint:style",
     "format": "prettier './**/*.{js,ts,vue}' --write",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint",
@@ -26,6 +27,7 @@
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.0",
+    "@nuxtjs/composition-api": "^0.23.3",
     "@nuxtjs/proxy": "^2.0.1",
     "@nuxtjs/pwa": "^3.3.5",
     "axios": "^0.21.0",
@@ -61,7 +63,7 @@
     "nuxt-purgecss": "^1.0.0",
     "prettier": "^2.2.1",
     "sass": "^1.32.11",
-    "sass-loader": "11.0.1",
+    "sass-loader": "10.1.1",
     "stylelint": "^13.13.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
