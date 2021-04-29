@@ -24,7 +24,6 @@ export default defineComponent({
       default: () => null,
     },
   },
-  head: {},
   setup(props) {
     const title = props.error.statusCode === 404 ? pageNotFound : otherError;
 
@@ -32,5 +31,6 @@ export default defineComponent({
 
     return { pageNotFound, otherError };
   },
+  head: {},
 });
 </script>

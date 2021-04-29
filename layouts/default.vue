@@ -18,9 +18,9 @@ export default defineComponent({
   components: {
     Footer,
   },
-  head: {},
   setup() {
     useMeta({ title: 'Daiki Oijma / @daikiojm' });
   },
+  head: {},
 });
 </script>
