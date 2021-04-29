@@ -1,6 +1,6 @@
 <template>
   <div class="theme-switcher">
-    <v-tooltip top>
+    <v-tooltip left>
       <template #activator="{ on, attrs }">
         <v-btn v-bind="attrs" fab small v-on="on" @click.prevent="switchTheme">
           <v-icon dark>{{ btnIcon }}</v-icon></v-btn
