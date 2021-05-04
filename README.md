@@ -1,5 +1,15 @@
 # daikiojm.me
 
+[![ci](https://github.com/daikiojm/daikiojm.me/actions/workflows/ci.yml/badge.svg)](https://github.com/daikiojm/daikiojm.me/actions/workflows/ci.yml)
+![Twitter Follow](https://img.shields.io/twitter/follow/daikiojm?style=social)
+
+Profile and Activities
+
+## Page
+
+https://daikiojm.me/
+
+
 ## Build Setup
 
 ```bash
