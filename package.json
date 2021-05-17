@@ -27,7 +27,7 @@
     "axios": "^0.21.0",
     "core-js": "^3.10.1",
     "dayjs": "^1.10.4",
-    "nuxt": "^2.14.6",
+    "nuxt": "^2.15.6",
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
