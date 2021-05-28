@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.0",
-    "@nuxtjs/composition-api": "^0.23.3",
+    "@nuxtjs/composition-api": "^0.24.0",
     "@nuxtjs/proxy": "^2.0.1",
     "@nuxtjs/pwa": "^3.3.5",
     "axios": "^0.21.0",
@@ -56,7 +56,7 @@
     "lint-staged": "^10.5.4",
     "nuxt-purgecss": "^1.0.0",
     "prettier": "^2.2.1",
-    "sass": "^1.32.11",
+    "sass": "^1.34.0",
     "sass-loader": "10.1.1",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
