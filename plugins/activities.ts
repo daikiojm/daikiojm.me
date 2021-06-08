@@ -1,4 +1,6 @@
-import { Plugin, Context } from '@nuxt/types';
+import { Context } from '@nuxt/types';
+import { defineNuxtPlugin } from '@nuxtjs/composition-api'
+
 import { getActivities, ActivitiesConfig } from '~/services/activity';
 
 declare module '@nuxt/types' {
@@ -7,7 +9,7 @@ declare module '@nuxt/types' {
   }
 }
 
-const Activity: Plugin = (context: Context) => {
+export default defineNuxtPlugin((context: Context) => {
   context.$getActivities = () => {
     const hatenaBlogApiKey = context.$config.hatenaBlogApiKey;
     const config: ActivitiesConfig = {
@@ -16,6 +18,4 @@ const Activity: Plugin = (context: Context) => {
 
     return getActivities(config);
   };
-};
-
-export default Activity;
+})
