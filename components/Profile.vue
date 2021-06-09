@@ -12,7 +12,13 @@
           </v-avatar>
         </div>
         <h2
-          class="subtitle-1 pa-0 ma-0 font-weight-regular text-truncate text-center"
+          class="
+            subtitle-1
+            pa-0
+            ma-0
+            font-weight-regular
+            text-truncate text-center
+          "
         >
           Daiki Oijma / @daikiojm
         </h2>

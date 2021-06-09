@@ -1,5 +1,5 @@
 import { Context } from '@nuxt/types';
-import { defineNuxtPlugin } from '@nuxtjs/composition-api'
+import { defineNuxtPlugin } from '@nuxtjs/composition-api';
 
 import { getActivities, ActivitiesConfig } from '~/services/activity';
 
@@ -18,4 +18,4 @@ export default defineNuxtPlugin((context: Context) => {
 
     return getActivities(config);
   };
-})
+});

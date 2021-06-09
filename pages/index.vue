@@ -9,7 +9,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import {
+  defineComponent,
+  useStatic,
+  useContext,
+} from '@nuxtjs/composition-api';
 
 import Profile from '~/components/Profile.vue';
 import Activity from '~/components/Activity.vue';
@@ -21,9 +25,21 @@ export default defineComponent({
     Profile,
     Activity,
   },
-  async asyncData(context) {
-    const activities = await context.$getActivities();
-    return { items: activities && activities.length > 0 ? activities : [] };
+  setup() {
+    const { $getActivities } = useContext();
+    const activities = useStatic(
+      () => $getActivities(),
+      undefined,
+      'activities'
+    );
+    const items =
+      activities && activities.value && activities.value.length > 0
+        ? activities
+        : [];
+
+    return {
+      items,
+    };
   },
 });
 </script>
