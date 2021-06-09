@@ -10,14 +10,17 @@
 
 <script lang="ts">
 import {
+  ref,
   defineComponent,
-  useStatic,
+  useFetch,
   useContext,
 } from '@nuxtjs/composition-api';
 
 import Profile from '~/components/Profile.vue';
 import Activity from '~/components/Activity.vue';
 import ThemeSwitcher from '~/components/ThemeSwitcher.vue';
+
+import { Activity as ActivityInterface } from '~/services/activity/types';
 
 export default defineComponent({
   components: {
@@ -27,18 +30,16 @@ export default defineComponent({
   },
   setup() {
     const { $getActivities } = useContext();
-    const activities = useStatic(
-      () => $getActivities(),
-      undefined,
-      'activities'
-    );
-    const items =
-      activities && activities.value && activities.value.length > 0
-        ? activities
-        : [];
+
+    const activities = ref<ActivityInterface[]>([]);
+
+    useFetch(async () => {
+      const result = await $getActivities();
+      activities.value = result;
+    });
 
     return {
-      items,
+      items: activities,
     };
   },
 });
