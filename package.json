@@ -20,7 +20,7 @@
     "*.{css,vue}": "stylelint"
   },
   "dependencies": {
-    "@nuxtjs/composition-api": "^0.24.4",
+    "@nuxtjs/composition-api": "^0.25.1",
     "@nuxtjs/proxy": "^2.0.1",
     "@nuxtjs/pwa": "^3.3.5",
     "axios": "^0.21.0",
